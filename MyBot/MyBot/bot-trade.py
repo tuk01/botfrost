@@ -361,6 +361,6 @@ async def on_ready():
     await channel.send("Напишите команду /help чтоб увидеть на что я способен!")
 
 token = os.environ.get("bot_token")
-client.run(str(tok+en))
+client.run(str(token))
 
-"NzkzMDU1MTA5NTg3NTMzODM0.X-msIA.oCkvUVO-bQ3jBjGXIi1RJCCDaOs"
+""
