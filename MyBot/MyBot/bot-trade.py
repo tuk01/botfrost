@@ -19,7 +19,12 @@ client.remove_command('help')
 
 @client.event
 async def on_command_error(ctx, error):
-    pass
+   if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send(f"{ctx.message.author.mention} указаны не все аргументы команды.")
+    if isinstance(error, commands.MissingPermissions):
+        await ctx.send(f"{ctx.message.author.mention} у вас недостаточно прав для этой команды!")
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send(f"{ctx.message.author.mention} такой команды не существует.")
 
 
 @client.command()
@@ -342,17 +347,10 @@ ID торговца: {ID} ==> Скопируйте его и вставте в �
 Отрицательных отзывов: {raz} ==> Количество Отрицательных отзывов на игрока.
 Заключение: {res}```""")
     else:
-        await ctx.send("короче вот статистика этого додика")
+        await ctx.send("Ника не существует в базе")
 
 
-@clear.error
-async def clear_error(ctx, error):
-    if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send(f"{ctx.message.author.mention} указаны не все аргументы команды.")
-    if isinstance(error, commands.MissingPermissions):
-        await ctx.send(f"{ctx.message.author.mention} у вас недостаточно прав для этой команды!")
-    if isinstance(error, commands.CommandNotFound):
-        await ctx.send(f"{ctx.message.author.mention} такой команды не существует.")
+    
 
 
 @client.event
