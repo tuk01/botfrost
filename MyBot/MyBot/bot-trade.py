@@ -21,9 +21,9 @@ client.remove_command('help')
 async def on_command_error(ctx, error):
    if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send(f"{ctx.message.author.mention} указаны не все аргументы команды.")
-    if isinstance(error, commands.MissingPermissions):
+   if isinstance(error, commands.MissingPermissions):
         await ctx.send(f"{ctx.message.author.mention} у вас недостаточно прав для этой команды!")
-    if isinstance(error, commands.CommandNotFound):
+   if isinstance(error, commands.CommandNotFound):
         await ctx.send(f"{ctx.message.author.mention} такой команды не существует.")
 
 
