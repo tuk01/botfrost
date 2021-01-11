@@ -357,7 +357,7 @@ async def clear_error(ctx, error):
 
 @client.event
 async def on_ready():
-    channel = client.get_channel(int(733230754817114166))
+    channel = client.get_channel(int(797776744034992148))
     await channel.send("Напишите команду /help чтоб увидеть на что я способен!")
 
 token = os.environ.get("bot_token")
